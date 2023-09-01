@@ -54,7 +54,7 @@
     --tag-dot: oklch(0.25 0.02 var(--primary-hue));
     --highlight-selection: oklch(0.35 0.035 var(--primary-hue));
     --article-code-bg: oklch(0.4 0.04 var(--primary-hue));
-    --article-block: oklch(0.2 0.02 var(--primary-hue));
+    --article-block: oklch(0.3 0.02 var(--primary-hue));
     --link-hover-bg: oklch(0.4 0.08 var(--primary-hue));
     --link-active-bg: oklch(0.35 0.07 var(--primary-hue));
     --blockquote-bg: oklch(0.2 0.02 var(--primary-hue));
@@ -89,7 +89,7 @@
     --tag-dot: #1d222b;
     --highlight-selection: #323a4d;
     --article-code-bg: #3d485e;
-    --article-block: #12161f;
+    --article-block: #292e38;
     --link-hover-bg: #324673;
     --link-active-bg: #28395f;
     --blockquote-bg: #12161f;
@@ -1086,9 +1086,12 @@ navbar {
 .article-date {
   float: left;
 }
+.meta-info-bar::-webkit-scrollbar {
+  display: none;
+}
 .meta-info-bar {
   color: var(--article-meta);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: medium;
   text-decoration: none;
   display: -webkit-box;
@@ -1097,6 +1100,9 @@ navbar {
   display: -ms-flexbox;
   display: box;
   display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* hide scrollbar for Firefox */
 }
 .meta-info-bar * {
   white-space: nowrap;
@@ -2480,16 +2486,6 @@ pre .javascript .function {
   z-index: 50;
   right: 30px;
   top: 0;
-}
-@media screen and (max-width: 767px) {
-  .back-to-top-wrapper {
-    display: none;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .back-to-top-wrapper {
-    display: none;
-  }
 }
 .back-to-top-btn {
   width: 60px;
