@@ -44,6 +44,53 @@
 <body>
   
    
+
+  
+<!-- <div class="click-effect"></div> -->
+
+<style>
+div.clickEffect{
+    position: fixed;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: rgb(170, 210, 255);
+    border-radius: 50%;
+    animation: clickEffect 1s ease-out;
+    z-index: 99999;
+}
+
+@keyframes clickEffect{
+    0%{
+        opacity: 1;
+        width: 0.5em;
+        height: 0.5em;
+        margin: -0.25em;
+        border-width: 0.5em;
+    }
+    100%{
+        opacity: 0.2;
+        width: 12em;
+        height: 12em;
+        margin: -6em;
+        border-width: 0.03em;
+    }
+}
+</style>
+
+<script>
+function clickEffect(e){
+    if (e.target.tagName !== 'A'){
+        var d = document.createElement("div");
+        d.className = "clickEffect";
+        d.style.top = e.clientY + "px";
+        d.style.left = e.clientX + "px";
+        document.body.appendChild(d);
+        // d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click', clickEffect);
+</script>  <!-- modefied by me -->
+
   <div id="main-grid" class="shadow   ">
     <div id="nav" class=""  >
       <navbar id="navbar">
@@ -135,38 +182,9 @@
       
 
 
-  <div class="widget-wrap">
-    <div class="widget">
-      <h3 class="widget-title">分類</h3>
-      <div class="category-box">
-            <a class="category-link" href="/categories/Blog/">
-                Blog
-                <div class="category-count">1</div>
-            </a>
-        <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/Blog/Hexo/">
-                Hexo
-                <div class="category-count">1</div>
-            </a>
-        </div></div>
-            <a class="category-link" href="/categories/Test/">
-                Test
-                <div class="category-count">1</div>
-            </a>
-        </div>
-    </div>
-  </div>
-
 
     
       
-  <div class="widget-wrap">
-    <div class="widget">
-      <h3 class="widget-title">標籤</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/theme-vivia/" rel="tag">theme vivia</a></li></ul>
-    </div>
-  </div>
-
 
     
   </div>
@@ -250,29 +268,6 @@
   </div>
   
     
-<nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/Test/a.html"
-      title="a title 中文"
-     >
-    <i class="fa-solid fa-angle-left"></i>
-    <p class="title-text">
-      
-        a title 中文
-        
-    </p>
-  </a>
-  <a class="article-nav-btn right  disabled "
-     >
-
-    <p class="title-text">
-        
-    </p>
-    <i class="fa-solid fa-angle-right"></i>
-  </a>
-</nav>
-
 
   
 </article>
